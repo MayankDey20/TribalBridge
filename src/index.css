@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tree Background Patterns */
+.tree-background {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(74, 124, 58, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 69, 19, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(74, 124, 58, 0.05) 0%, transparent 50%);
+}
+
+.tree-silhouette {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-opacity='0.03'%3E%3Cpath d='M50 5c-5 0-10 5-10 15 0 8 3 12 8 15-3 2-8 5-8 12 0 8 5 15 10 15s10-7 10-15c0-7-5-10-8-12 5-3 8-7 8-15 0-10-5-15-10-15z' fill='%23228B22'/%3E%3Cpath d='M30 15c-3 0-6 3-6 9 0 5 2 7 5 9-2 1-5 3-5 7 0 5 3 9 6 9s6-4 6-9c0-4-3-6-5-7 3-2 5-4 5-9 0-6-3-9-6-9z' fill='%23228B22'/%3E%3Cpath d='M70 20c-4 0-7 4-7 11 0 6 2 9 6 11-2 2-6 4-6 9 0 6 4 11 7 11s7-5 7-11c0-5-4-7-6-9 4-2 6-5 6-11 0-7-3-11-7-11z' fill='%23228B22'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  background-repeat: repeat;
+}
+
+.floating-leaves {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.leaf {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(74, 124, 58, 0.3);
+  border-radius: 0 100% 0 100%;
+  animation: float 15s infinite linear;
+}
+
+.leaf:nth-child(1) { left: 10%; animation-delay: 0s; }
+.leaf:nth-child(2) { left: 20%; animation-delay: 2s; }
+.leaf:nth-child(3) { left: 30%; animation-delay: 4s; }
+.leaf:nth-child(4) { left: 40%; animation-delay: 6s; }
+.leaf:nth-child(5) { left: 50%; animation-delay: 8s; }
+.leaf:nth-child(6) { left: 60%; animation-delay: 10s; }
+.leaf:nth-child(7) { left: 70%; animation-delay: 12s; }
+.leaf:nth-child(8) { left: 80%; animation-delay: 14s; }
+
+@keyframes float {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Tree Branch Decorations */
+.branch-decoration {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='50' viewBox='0 0 200 50'%3E%3Cpath d='M0 25 Q50 15 100 25 Q150 35 200 25' stroke='%234a7c3a' stroke-width='2' fill='none' opacity='0.1'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
