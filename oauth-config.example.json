@@ -1,0 +1,26 @@
+{
+  "google_oauth": {
+    "client_id": "YOUR_GOOGLE_CLIENT_ID",
+    "client_secret": "YOUR_GOOGLE_CLIENT_SECRET",
+    "redirect_uris": {
+      "local": "http://localhost:5173/auth/callback",
+      "production": "https://your-site-name.netlify.app/auth/callback"
+    },
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  },
+  "supabase": {
+    "url": "YOUR_SUPABASE_URL",
+    "anon_key": "YOUR_SUPABASE_ANON_KEY",
+    "auth_redirect_to": "/auth/callback"
+  },
+  "instructions": {
+    "step_1": "Get Google OAuth credentials from https://console.cloud.google.com/",
+    "step_2": "Add credentials to Supabase Dashboard > Authentication > Providers > Google",
+    "step_3": "Update .env file with Supabase credentials",
+    "step_4": "For production, add environment variables to Netlify",
+    "note": "DO NOT commit this file with real credentials!"
+  }
+}
